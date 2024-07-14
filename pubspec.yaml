@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   google_fonts: ^6.2.1
+  url_launcher: ^6.3.0
+  font_awesome_flutter: ^10.7.0
   flutter:
     sdk: flutter
 
@@ -63,6 +65,12 @@ flutter:
   assets:
     - assest/bg.jpeg
     - assest/rock_paper.png
+    - assest/weather_img.png
+    - assest/insta_img.png
+    - assest/selfie_img.png
+    - assest/chit_img.png
+    - assest/flutter_img.png
+    - assest/my_photo.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

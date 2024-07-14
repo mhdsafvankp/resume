@@ -5,6 +5,7 @@ import 'package:my_resume/widgets/app_bar.dart';
 import 'package:my_resume/widgets/appbar_item.dart';
 import 'package:my_resume/widgets/name_widget.dart';
 import 'package:my_resume/widgets/resume_section.dart';
+import 'package:my_resume/widgets/works_section.dart';
 
 import '../Utils/strings.dart';
 
@@ -30,7 +31,8 @@ class _HomeState extends State<Home> {
                 subTitle: '$mySimpleSummary',
               ),
               AboutSection(),
-              ResumeSection()
+              ResumeSection(),
+              WorksSection()
             ],
           ),
         ));

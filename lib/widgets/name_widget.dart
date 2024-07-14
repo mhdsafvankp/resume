@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_resume/Utils/screen_utils.dart';
 import 'package:my_resume/widgets/icons_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NameWidget extends StatelessWidget {
   const NameWidget({super.key, required this.title, required this.subTitle});
@@ -55,14 +57,51 @@ class NameWidget extends StatelessWidget {
             ),
             Container(
               width: ScreenUtils.getWidthPerc(context, 35),
-              child: Row(
+              child:  Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  IconsWidget(icon: Icons.facebook),
-                  IconsWidget(icon: Icons.message),
-                  IconsWidget(icon: Icons.call),
-                  IconsWidget(icon: Icons.email_outlined)
+                  InkWell(
+                      onTap: () async {
+                        final Uri url = Uri.parse(
+                            'mailto:mhdsafvankp@gmail.com?subject=Greetings&body=Hello%20World');
+                        if (!await launchUrl(url)) {
+                          throw Exception('Could not launch');
+                        }
+                      },
+                      child: const Icon(
+                          Icons.email_outlined,
+                        size: 40,
+                        color: Colors.white,
+                      )),
+                  InkWell(
+                      onTap: () async {
+                        final Uri url = Uri.parse(
+                            'https://www.linkedin.com/in/mohamed-safvan-kp/');
+                        if (!await launchUrl(url)) {
+                          throw Exception('Could not launch');
+                        }
+                      },
+                      child: const Icon(
+                        FontAwesomeIcons.linkedin,
+                        size: 40,
+                        color: Colors.white,
+                      )),
+                  InkWell(
+                      onTap: () async {
+                        int phone = 7034192064;
+                        var whatsappUrl = "https://wa.me/${phone}?text=Hello";
+                        final Uri url = Uri.parse(
+                            whatsappUrl);
+                        if (!await launchUrl(url)) {
+                          throw Exception('Could not launch');
+                        }
+                      },
+                      child: const Icon(
+                        FontAwesomeIcons.whatsapp,
+                        size: 40,
+                        color: Colors.white,
+                      )),
                 ],
               ),
             )
