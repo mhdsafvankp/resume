@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
             children: [
               NameWidget(
                 key: GlobalKeys.top,
-                title: 'I\'m $myName',
+                title: 'I\'m \n$myName',
                 subTitle: '$mySimpleSummary',
               ),
               AboutSection(
