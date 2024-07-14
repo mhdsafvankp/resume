@@ -7,12 +7,14 @@ import 'appbar_item.dart';
 
 
 class HorizontalAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HorizontalAppBar({super.key});
+  const HorizontalAppBar({super.key, required this.opacity});
+
+  final double opacity;
 
   @override
   Widget build(BuildContext context) {
     return  AppBar(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black87.withOpacity(opacity),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

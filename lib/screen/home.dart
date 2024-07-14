@@ -22,6 +22,15 @@ class _HomeState extends State<Home> {
 
   final ScrollController _controller = ScrollController();
 
+  double _opacity = 0;
+  double _scrollPosition = 0;
+
+  _scrollListener() {
+    setState(() {
+      _scrollPosition = _controller.position.pixels;
+    });
+  }
+
   void _scrollTop() {
     _controller.animateTo(
       _controller.position.minScrollExtent,
@@ -31,9 +40,21 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void initState() {
+    _controller.addListener(_scrollListener);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+
+    _opacity = _scrollPosition < ScreenUtils.getHeight(context) * 0.40
+        ? _scrollPosition / (ScreenUtils.getHeight(context) * 0.40)
+        : 1;
+
     return Scaffold(
-        appBar: HorizontalAppBar(),
+      extendBodyBehindAppBar: true,
+        appBar: HorizontalAppBar(opacity: _opacity,),
         body: SingleChildScrollView(
           controller: _controller,
           child: Column(
