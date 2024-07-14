@@ -1,4 +1,7 @@
 
+import 'package:my_resume/models/work_item.dart';
+import 'package:my_resume/widgets/works_section.dart';
+
 const myName = 'Mohamed Safvan KP';
 const mySimpleSummary = 'I specialize in front-end development with a focus on Flutter, leveraging my Computer Science degree from Government Engineering College, Thrissur.';
 const mySummary = 'I specialize in front-end development with a focus on Flutter, backed by a Computer Science degree from Government Engineering College, Thrissur. This foundation allows me to create effective Android and iOS solutions. By embracing agile methods and teamwork, I strive to deliver mobile apps that offer a smooth user experience. My goal is to improve applications continuously, using my problem-solving skills to tackle complex challenges.';
@@ -24,4 +27,51 @@ const companyWorkExperiance2 = ' ○  Contributed to developing and maintaining 
     '\n ○  Utilized Java and Kotlin to work on a high-profile trading application project.'
     '\n ○  Worked closely with cross-functional teams to ensure seamless feature implementations.';
 
+// Skills
+const skills = 'SKILLS';
+const languages = 'Languages  \u2981  FrameWork';
+const tools = 'Tools  \u2981  Libraries  \u2981  APIs';
+const personal = 'Personals';
+const flutter = 'Flutter';
+const android = 'Android';
+const dart = 'Dart';
+const java = 'Java';
+const kotlin = 'Kotlin';
+const toolsList = [
+  'Android Studio',
+  'VS code',
+  'Xcode',
+  'Firebase',
+  'Git',
+  'Jira Board',
+  'Postman',
+  'Bloc',
+  'Dio',
+  'Http',
+  'Google APIs',
+  'Glide',
+  'Payment Gateways',
+  'Camera component',
+  'Hive',
+  'get_it'
+];
 
+const personalList = [
+  'Problem-solving',
+  'Teamwork',
+  'Adaptability',
+  'Communication',
+  'Time management',
+];
+
+final workList = [
+  WorkItem(
+    title: 'RPS',
+    subTitle: 'Flutter Game Project',
+    img: 'assest/rock_paper.png',
+    desc:
+    'Designed and coded a Rock Paper Scissors game in Flutter, and successfully launched it on the Play Store.',
+    link:
+    'https://play.google.com/store/apps/details?id=com.firstthing.rps&hl=en_US',
+  ),
+];
