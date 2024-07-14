@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_resume/Utils/global_keys.dart';
 
 import '../Utils/screen_utils.dart';
 import 'appbar_item.dart';
@@ -16,11 +17,19 @@ class HorizontalAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           SizedBox(width: ScreenUtils.getWidthPerc(context, 5)),
-          const AppbarItem(title: 'HOME'),
-          const AppbarItem(title: 'ABOUT'),
-          const AppbarItem(title: 'RESUME'),
-          const AppbarItem(title: 'WORKS'),
-          const AppbarItem(title: 'CONTACTS'),
+          AppbarItem(title: 'HOME', scrollTo: (){
+            Scrollable.ensureVisible(GlobalKeys.top.currentContext!, duration: Duration(seconds: 1));
+            },),
+          AppbarItem(title: 'ABOUT', scrollTo: (){
+            Scrollable.ensureVisible(GlobalKeys.about.currentContext!, duration: Duration(seconds: 1));
+          },),
+          AppbarItem(title: 'RESUME', scrollTo: (){
+            Scrollable.ensureVisible(GlobalKeys.resume.currentContext!, duration: Duration(seconds: 1));
+          },),
+          AppbarItem(title: 'WORKS', scrollTo: (){
+            Scrollable.ensureVisible(GlobalKeys.works.currentContext!, duration: Duration(seconds: 1));
+          }),
+          // AppbarItem(title: 'CONTACTS', scrollTo: (){}),
           SizedBox(width: ScreenUtils.getWidthPerc(context, 5)),
         ],
       ),

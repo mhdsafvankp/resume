@@ -11,22 +11,30 @@ class AboutSection extends StatelessWidget {
     return Container(
       width: ScreenUtils.getWidth(context),
       color: Colors.black45,
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 60),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 60),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
                 flex: 1,
-                  child: Icon(
-                Icons.insert_emoticon_rounded,
-                size: 80,
-                    color: Colors.white,
-              )),
-              Expanded(
-                flex: 3,
+                child: CircleAvatar(
+                  radius: ScreenUtils.getWidthPerc(context, 20),
+                  backgroundColor: Colors.transparent, // Optional: for a transparent background
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assest/my_photo.jpeg',
+                      fit: BoxFit.cover,
+                      width: ScreenUtils.getWidthPerc(context, 20),
+                      height: ScreenUtils.getWidthPerc(context, 20),
+                    ),
+                  ),
+                )),
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,9 +74,9 @@ class AboutSection extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

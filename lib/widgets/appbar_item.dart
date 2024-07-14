@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppbarItem extends StatelessWidget {
-  const AppbarItem({super.key, required this.title});
+  const AppbarItem({super.key, required this.title, required this.scrollTo});
 
   final String title;
+  final Function() scrollTo;
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,7 @@ class AppbarItem extends StatelessWidget {
         }
         return Colors.white;
       }),
-      onTap: (){
-        print('onTap');
-      },
+      onTap: scrollTo,
       child: Text( title , style:  GoogleFonts.lato(
         color: Colors.white,
         fontSize: 12,
